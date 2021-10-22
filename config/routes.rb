@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :cours
   resources :formations
   get '/coursby/:id', to: 'cours#show_by_formation'

@@ -14,7 +14,11 @@ class FormationsController < ApplicationController
         @formation = Formation.create(
             formation_name: params[:formation_name]
         )
-        render json: @formation
+        if @formation.save
+            render json: @formation
+        else
+            render json: {error: 'formation_name missing'}, status: :bad_request
+        end    
     end 
 
     def update
@@ -22,7 +26,11 @@ class FormationsController < ApplicationController
         @formation.update(
             formation_name: params[:formation_name]
         )
-        render json: @formation
+        if @formation.save
+            render json: @formation
+        else
+            render json: {error: 'formation_name missing'}, status: :bad_request
+        end  
     end 
 
     def destroy
