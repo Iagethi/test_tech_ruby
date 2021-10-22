@@ -15,7 +15,7 @@ class CoursController < ApplicationController
             cours_name: params[:cours_name],
             formation_id: params[:formation_id]
         )
-        if @formation.save
+        if @cour.save
             render json: @cour
         else
             render json: {error: 'params missing'}, status: :bad_request
