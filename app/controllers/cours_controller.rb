@@ -31,7 +31,8 @@ class CoursController < ApplicationController
     def update
         @cour = Cour.find(params[:id])
         @cour.update(
-            cours_name: params[:cours_name]
+            cours_name: params[:cours_name],
+            formation_id: params[:formation_id]
         )
         render json: @cour
     end 
