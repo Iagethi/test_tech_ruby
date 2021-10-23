@@ -1,5 +1,6 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   resources :courses
   resources :formations
   get '/coursesby/:id', to: 'courses#show_by_formation'
